@@ -1,25 +1,53 @@
-vconfig		rd rs1 imm12 14..12=0 6..3=0xA 2..0=0x7
-vsetvl		rd rs1 imm12 14..12=1 6..3=0xA 2..0=0x7
-vadd		rd rs1 rs2 rs3 aqrl 14..12=0 6..3=0xB 2..0=0x7
-vsub		rd rs1 rs2 rs3 aqrl 14..12=1 6..3=0xB 2..0=0x7
-vmul		rd rs1 rs2 rs3 aqrl 14..12=2 6..3=0xB 2..0=0x7
-vcliph		rd rs1 rs2 rs3 aqrl 14..12=3 6..3=0xB 2..0=0x7
-vand		rd rs1 rs2 rs3 aqrl 14..12=4 6..3=0xB 2..0=0x7
-vor			rd rs1 rs2 rs3 aqrl 14..12=5 6..3=0xB 2..0=0x7
-vnot		rd rs1 rs2 rs3 aqrl 14..12=6 6..3=0xB 2..0=0x7
-vseq 		rd rs1 rs2 rs3 aqrl 14..12=1 6..3=0xC 2..0=0x7
-vsneq 		rd rs1 rs2 rs3 aqrl 14..12=2 6..3=0xC 2..0=0x7
-vslt		rd rs1 rs2 rs3 aqrl 14..12=3 6..3=0xC 2..0=0x7
-vsle		rd rs1 rs2 rs3 aqrl 14..12=4 6..3=0xC 2..0=0x7
-vsgt		rd rs1 rs2 rs3 aqrl 14..12=5 6..3=0xC 2..0=0x7
-vsge		rd rs1 rs2 rs3 aqrl 14..12=6 6..3=0xC 2..0=0x7
-vmove		rd rs1 rs2 rs3 aqrl 14..12=1 6..3=0x8 2..0=0x7
-vpermute	rd rs1 rs2 rs3 aqrl 14..12=2 6..3=0x8 2..0=0x7
-vredsum		rd rs1 rs2 rs3 aqrl 14..12=3 6..3=0x8 2..0=0x7
-vlh			rd rs1 rs2 rs3 aqrl 14..12=1 6..3=0xF 2..0=0x7
-vlxh		rd rs1 rs2 rs3 aqrl 14..12=2 6..3=0xF 2..0=0x7
-vlsh		rd rs1 rs2 rs3 aqrl 14..12=3 6..3=0xF 2..0=0x7
-vsh			rd rs1 rs2 rs3 aqrl 14..12=5 6..3=0xF 2..0=0x7
-vssh		rd rs1 rs2 rs3 aqrl 14..12=6 6..3=0xF 2..0=0x7
-vsxh		rd rs1 rs2 rs3 aqrl 14..12=7 6..3=0xF 2..0=0x7
+vsetvl		rd rs1 imm12 14..12=0x1 6..0=0x7
 
+vadd.v		rd rs1 rs2 m 31..26=0x0 14..12=0x0 6..0=0x57
+vadd.x		rd rs1 rs2 m 31..26=0x0 14..12=0x1 6..0=0x57
+
+vsub.v		rd rs1 rs2 m 31..26=0x2 14..12=0x0 6..0=0x57
+vsub.x		rd rs1 rs2 m 31..26=0x2 14..12=0x1 6..0=0x57
+
+vmul.v		rd rs1 rs2 m 31..26=0x25 14..12=0x0 6..0=0x57
+vmul.x		rd rs1 rs2 m 31..26=0x25 14..12=0x1 6..0=0x57
+
+vand.v		rd rs1 rs2 m 31..26=0x9 14..12=0x0 6..0=0x57
+vand.x		rd rs1 rs2 m 31..26=0x9 14..12=0x1 6..0=0x57
+
+vor.v		rd rs1 rs2 m 31..26=0xa 14..12=0x0 6..0=0x57
+vor.x		rd rs1 rs2 m 31..26=0xa 14..12=0x1 6..0=0x57
+
+vxor.v		rd rs1 rs2 m 31..26=0xb 14..12=0x0 6..0=0x57
+vxor.x		rd rs1 rs2 m 31..26=0xb 14..12=0x1 6..0=0x57
+
+vseq.v		rd rs1 rs2 m 31..26=0x18 14..12=0x0 6..0=0x57
+vseq.x		rd rs1 rs2 m 31..26=0x18 14..12=0x1 6..0=0x57
+
+vsne.v		rd rs1 rs2 m 31..26=0x19 14..12=0x0 6..0=0x57
+vsne.x		rd rs1 rs2 m 31..26=0x19 14..12=0x1 6..0=0x57
+
+vslt.v		rd rs1 rs2 m 31..26=0x1b 14..12=0x0 6..0=0x57
+vslt.x		rd rs1 rs2 m 31..26=0x1b 14..12=0x1 6..0=0x57
+
+vsle.v		rd rs1 rs2 m 31..26=0x1d 14..12=0x0 6..0=0x57
+vsle.x		rd rs1 rs2 m 31..26=0x1d 14..12=0x1 6..0=0x57
+
+vsgt.v		rd rs1 rs2 m 31..26=0x1e 14..12=0x0 6..0=0x57
+vsgt.x		rd rs1 rs2 m 31..26=0x1e 14..12=0x1 6..0=0x57
+
+vsge.v		rd rs1 rs2 m 31..26=0x1f 14..12=0x0 6..0=0x57
+vsge.x		rd rs1 rs2 m 31..26=0x1f 14..12=0x1 6..0=0x57
+
+vpermute.v	rd rs1 rs2 m 31..26=0xc 14..12=0x0 6..0=0x57
+
+vredsum.v	rd rs1 rs2 m 31..26=0x1 14..12=0x0 6..0=0x57
+
+vmv.v		rd rs1 rs2 m 31..26=0x3 14..12=0x0 6..0=0x57
+vclip.x		rd rs1 rs2 m 31..26=0x2f 14..12=0x1 6..0=0x57
+
+
+vlh			rd rs1 rs2 m 31..29=0x0 28..26=0x0 14..12=0x5 6..0=0x7
+vlsh		rd rs1 rs2 m 31..29=0x0 28..26=0x2 14..12=0x5 6..0=0x7
+vlxh		rd rs1 rs2 m 31..29=0x0 28..26=0x3 14..12=0x5 6..0=0x7
+
+vsh			rd rs1 rs2 m 31..29=0x0 28..26=0x0 14..12=0x5 6..0=0x27
+vssh		rd rs1 rs2 m 31..29=0x0 28..26=0x2 14..12=0x5 6..0=0x27
+vsxh		rd rs1 rs2 m 31..29=0x0 28..26=0x3 14..12=0x5 6..0=0x27
